@@ -1,0 +1,10 @@
+type Monitoria {
+  id: ID
+  nombre: String
+  monitor: Monitor
+}
+
+type Query {
+  monitoria(id: ID!): Monitoria!
+  monitorias: [Monitoria!]!
+}

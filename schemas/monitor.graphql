@@ -1,0 +1,9 @@
+type Monitor {
+  id: ID
+  nombre: String
+}
+
+type Query {
+  monitor(id: ID!): Monitor!
+  monitores: [Monitor!]!
+}

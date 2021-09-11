@@ -1,0 +1,53 @@
+version: '3'
+
+networks:
+  backend_network:
+    driver: bridge
+    name: backend_network
+    ipam:
+      config:
+        - subnet: 172.22.0.0/24
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: 2
+          memory: 1G
+        reservations:
+          cpus: 0
+          memory: 0M
+    networks:
+      backend_network:
+        ipv4_address: 172.22.0.2
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/srv/app
+      - /srv/app/node_modules
+    links:
+      - mysql
+  mysql:
+    image: mysql:5.7
+    networks:
+      backend_network:
+        ipv4_address: 172.22.0.3
+    env_file: .env
+    volumes:
+      - certika:/var/lib/mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_DATABASE=$DB_NAME
+      - MYSQL_USER=$DB_USER
+      - MYSQL_PASSWORD=$DB_PASSWORD
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+volumes:
+  certika:
