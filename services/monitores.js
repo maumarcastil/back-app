@@ -1,11 +1,11 @@
-const { sequelize, Monitores: monitorModel } = require('../models');
+const { sequelize, Monitores: monitorModel } = require("../models");
 
 class MonitorService {
   async getOne(id) {
     const monitor = await monitorModel.findOne({
       where: {
-        id
-      }
+        id,
+      },
     });
 
     return monitor;

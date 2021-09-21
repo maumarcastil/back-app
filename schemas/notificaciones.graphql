@@ -1,7 +1,8 @@
+scalar Date
 type Notificaciones {
   id: ID
   texto: String
-  fecha: Date!
+  fecha: Date
   estado: Boolean!
 }
 

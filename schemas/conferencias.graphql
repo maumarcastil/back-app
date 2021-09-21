@@ -1,9 +1,11 @@
+scalar Date
+
 type Conferencias {
   id: ID
   nombres: String
-  fecha: Date!
-  hora_inicio: DateTime!
-  hora_fin: DateTime!
+  fecha: Date
+  hora_inicio: Date
+  hora_fin: Date
   descripcion: String
   expositor: String
   lugar: String
