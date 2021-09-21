@@ -1,0 +1,12 @@
+type Patrocinadores {
+  id: ID
+  nombres: String
+  foto: String
+  link: String
+  estado: Boolean!
+}
+
+type Query {
+  patrocinador(id: ID!): Patrocinadores!
+  patrocinadores: [Patrocinadores!]!
+}

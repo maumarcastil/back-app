@@ -1,0 +1,11 @@
+type Notificaciones {
+  id: ID
+  texto: String
+  fecha: Date!
+  estado: Boolean!
+}
+
+type Query {
+  notificacion(id: ID!): Notificaciones!
+  notificaciones: [Notificaciones!]!
+}

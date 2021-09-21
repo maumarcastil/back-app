@@ -1,0 +1,14 @@
+type Conferencistas {
+  id: ID
+  nombres: String
+  frase: String
+  perfil: String
+  foto: String
+  foto_bandera: String
+  estado: Boolean!
+}
+
+type Query {
+  conferencista(id: ID!): Conferencistas!
+  conferencistas: [Conferencistas!]!
+}
