@@ -27,7 +27,7 @@ services:
     restart: unless-stopped
     env_file: .env
     ports:
-      - '3000:3000'
+      - '3030:3030'
     volumes:
       - .:/srv/app
       - /srv/app/node_modules
@@ -46,8 +46,6 @@ services:
       - '3306:3306'
     environment:
       - MYSQL_DATABASE=$DB_NAME
-      - MYSQL_USER=$DB_USER
-      - MYSQL_PASSWORD=$DB_PASSWORD
       - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
 volumes:
   certika:
