@@ -1,0 +1,19 @@
+type Conferencias {
+  id: ID
+  nombres: String
+  fecha: Date!
+  hora_inicio: DateTime!
+  hora_fin: DateTime!
+  descripcion: String
+  expositor: String
+  lugar: String
+  es_paralela: Boolean!
+  cupo: Int
+  sector: String
+  estado: Boolean!
+}
+
+type Query {
+  conferencia(id: ID!): Conferencias!
+  conferencias: [Conferencias!]!
+}

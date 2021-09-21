@@ -1,0 +1,11 @@
+type RegistrosConferencias {
+  id: ID
+  estado: Boolean!
+  usuario: Usuarios
+  conferencia: Conferencias
+}
+
+type Query {
+  registroConferencia(id: ID!): RegistrosConferencias!
+  registrosConferencias: [RegistrosConferencias!]!
+}

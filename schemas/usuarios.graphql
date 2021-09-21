@@ -1,0 +1,28 @@
+type Usuarios {
+  id: ID
+  documento: String
+  codigo_qr: String
+  nombres: String
+  correo: String
+  celular: String
+  tipo_documento: String
+  ciudad_pais: String
+  institucion_origen: String
+  ocupacion: String
+  pregrado: String
+  posgrado: String
+  universidad_externa: String
+  profesion: String
+  tipo_invitacion: String
+  medio: String
+  fecha_nacimiento: String
+  asistio: String
+  asistio_dia2: String
+  asistio_dia3: String
+  estado: String
+}
+
+type Query {
+  usuario(id: ID!): Usuarios!
+  usuarios: [Usuarios!]!
+}
